@@ -1,0 +1,27 @@
+application: education-allocation
+version: 3
+runtime: python27
+api_version: 1
+threadsafe: true
+
+
+handlers:
+- url: /assets
+  static_dir: assets
+
+
+- url: /pay
+  script: main.app
+
+- url: /index\.html
+  script: main.app
+
+
+- url: /.*
+  script: main.app
+
+libraries:
+- name: webapp2
+  version: "2.5.2"
+- name: ssl
+  version: latest
